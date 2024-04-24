@@ -5,9 +5,11 @@
         <h1>Bentornato {{Auth::user()->name}}</h1>
         <p>cosa vuoi fare oggi?</p>
 
-        <a href="{{route('admin.projects.index')}}" class="btn btn-primary my-5 mx-2">Vai alla index</a>
+        <a href="{{route('admin.projects.index')}}" class="btn btn-primary my-5 mx-2">Vai ai progetti</a>
 
         <a href="{{route('admin.technologies.index')}}" class="btn btn-primary my-5 mx-2">Vai alle tecnologie</a>
+
+        <a href="{{route('admin.types.index')}}" class="btn btn-primary my-5 mx-2">Vai alle Categorie</a>
     </div>
     
 

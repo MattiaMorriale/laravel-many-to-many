@@ -22,7 +22,17 @@ class StoreTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required | max:255',
+            'description' => 'nullable | max:5000',
+        ];
+    }
+
+    public function messages(): array {
+        return [
+            'name.required' => "Il Nome deve essere inserito nell'apposito campo",
+            'name.max' => "Il Nome supera il numero di caratteri cosentiti (:max)",
+            'description.required' => "La descrizione deve essere inserita nell'apposito campo",
+            'description.max' => "La descrizione supera il numero di caratteri cosentiti (:max)",           
         ];
     }
 }
