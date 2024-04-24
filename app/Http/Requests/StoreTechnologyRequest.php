@@ -22,7 +22,14 @@ class StoreTechnologyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'type' => 'required | max:255',
+        ];
+    }
+
+    public function messages(): array {
+        return [
+            'type.required' => "La tecnologia deve essere inserita nell'apposito campo",
+            'type.max' => "La tecnologia supera il numero di caratteri cosentiti (:max)",           
         ];
     }
 }
