@@ -41,16 +41,27 @@
 
         <div class="mb-3">
             <label for="technologies" class="form-label text-primary">Tecnologie</label>
-            <input type="text" class="form-control  @error('technologies') is-invalid @enderror " id="technologies" name="technologies" value='{{old('technologies')}}'>
-            @error('technologies')
-                <div class="invalid-feedback ">
-                    {{$message}}
-                </div>
-            @enderror
+            <div class="d-flex gap-4">
+                @foreach($technologies as $technology)
+                    <div class="form-check ">
+                        <input 
+                            type="checkbox" 
+                            name="technologies[]"
+                            value="{{$technology->id}}" 
+                            class="form-check-input" 
+                            id="tag-{{$technology->id}}"
+                            {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}
+
+                        > 
+                        
+                        <label for="tag-{{$technology->id}}" class="form-check-label">{{$technology->type}}</label>
+                    </div>
+                @endforeach
+            </div>
         </div>
 
         <div class="mb-3">
-            <label for="type_id" class="form-label text-primary"></label>
+            <label for="type_id" class="form-label text-primary">Categoria</label>
             <select class="form-select" name="type_id" id="type_id">
                 
                 <option value=""></option>
