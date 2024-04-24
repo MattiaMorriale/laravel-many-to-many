@@ -54,11 +54,17 @@
         </div>
         <div class="col-7">
             <p><strong class="text-primary">Descrizione :</strong><br> {{$project->description}}</p>
-            <p><strong class="text-primary">Tecnologie :</strong><br> {{$project->technologies}}</p>
             @if ($project->type?->name)
             <p><strong class="text-primary">Categoria :</strong><br> {{ $project->type?->name }}</p>
             @endif
             <a href="{{$project->link_GitHub}}" class="btn btn-primary my-5 text-center ">link di GitHub</a>
+
+            <div class="d-flex gap-2 mb-5">
+                @foreach ($project->technologies as $technology)
+                <span class="badge rounded-pill bg-primary ">{{$technology->type}}</span>
+                @endforeach
+            </div>
+            
         </div>
     </div>
     

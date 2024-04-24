@@ -11,8 +11,4 @@ class ProjectSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
-        $Projects = config('project');
-    }
 }
