@@ -5,6 +5,11 @@ import laravel from 'laravel-vite-plugin';
 const path = require('path') // <-- require path from node
 
 export default defineConfig({
+
+    server: {
+        host: "192.168.1.68",
+    },
+
     plugins: [
         laravel({
             // edit the first value of the array input to point to our new sass files and folder.
